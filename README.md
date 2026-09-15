@@ -6,6 +6,12 @@ Vibe coding 让 HTML 原型图的产出变得很快，但给原型图做标注�
 
 在任意 HTML 页面中引入 note-overlay.js 脚本，即可提供 HTML 页面批注右侧栏，适合原型批注、需求标注等场景。
 
+## 在线演示
+
+[https://jionghang.github.io/vibe-coding-html-annotator/example.html](https://jionghang.github.io/vibe-coding-html-annotator/example.html)
+
+演示站点通过 GitHub Pages 静态部署，为只读模式：可以查看预置的示例批注，不能新增或修改。
+
 ## 使用方式
 
 在 HTML 页面的 `<head>` 中引入脚本：
