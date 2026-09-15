@@ -1,0 +1,36 @@
+[
+  {
+    "statusName": "隐藏顶部公告条",
+    "description": "启用后隐藏页面顶部的公告条，模拟「无公告」时的页面状态。",
+    "elements": [
+      {
+        "selector": "#demo-banner",
+        "selectors": ["#demo-banner", "div > div"],
+        "label": "📢 这是一条演示用的顶部公告条，可用「状态批注」一键隐藏它。",
+        "tag": "div"
+      }
+    ],
+    "filename": "example.html",
+    "url": "/example.html",
+    "created": "2026-09-10T09:20:00.000Z",
+    "updated": "2026-09-10T09:20:00.000Z",
+    "id": "demo005status"
+  },
+  {
+    "statusName": "仅浏览（隐藏新增表单）",
+    "description": "启用后隐藏「新增商品」表单卡片，模拟只看不编辑的页面状态。",
+    "elements": [
+      {
+        "selector": "#sec-form",
+        "selectors": ["#sec-form", "div > div > div"],
+        "label": "新增商品 商品名称 单价（元） 分类 库存 提交 取消",
+        "tag": "div"
+      }
+    ],
+    "filename": "example.html",
+    "url": "/example.html",
+    "created": "2026-09-10T09:25:00.000Z",
+    "updated": "2026-09-10T09:25:00.000Z",
+    "id": "demo006status"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "name": "vibe-coding-html-annotator",
+  "version": "1.0.0",
+  "description": "Vibe Coding HTML 原型图批注工具：引入一个脚本即可为任意网页添加右侧批注侧栏",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["annotation", "overlay", "notes"],
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}

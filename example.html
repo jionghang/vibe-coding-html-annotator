@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>示例页面 - Vibe Coding HTML 原型图批注工具</title>
+    <script src="./js/note-overlay.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif;
+            background: #F5F7FA;
+            line-height: 1.6;
+            color: #606266;
+        }
+        .banner {
+            background: #FDF6EC;
+            border-bottom: 1px solid #FAECD8;
+            color: #E6A23C;
+            font-size: 13px;
+            text-align: center;
+            padding: 10px 16px;
+        }
+        .page-header {
+            background: #fff;
+            border-bottom: 1px solid #EBEEF5;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .page-header .logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: #409EFF;
+            color: #fff;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .page-header .title { font-size: 16px; font-weight: 600; color: #303133; }
+        .page-header .sub { font-size: 12px; color: #909399; }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 32px 20px 60px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #EBEEF5;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+        .card h1 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #303133;
+            margin-bottom: 16px;
+            padding-bottom: 14px;
+            border-bottom: 1px solid #EBEEF5;
+        }
+        .card h2 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #303133;
+            margin-bottom: 12px;
+        }
+        p { margin-bottom: 10px; }
+        .form-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 14px;
+        }
+        .form-row label {
+            width: 88px;
+            flex-shrink: 0;
+            font-size: 14px;
+            color: #606266;
+            text-align: right;
+        }
+        .form-row input, .form-row select {
+            flex: 1;
+            height: 34px;
+            border: 1px solid #DCDFE6;
+            border-radius: 4px;
+            padding: 0 12px;
+            font-size: 14px;
+            color: #606266;
+            outline: none;
+        }
+        .form-row input:focus, .form-row select:focus { border-color: #409EFF; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 34px;
+            padding: 0 18px;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 1px solid #DCDFE6;
+            background: #fff;
+            color: #606266;
+        }
+        .btn:hover { color: #409EFF; border-color: #C6E2FF; background: #ECF5FF; }
+        .btn-primary { background: #409EFF; border-color: #409EFF; color: #fff; }
+        .btn-primary:hover { background: #66B1FF; border-color: #66B1FF; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        table th, table td {
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #EBEEF5;
+        }
+        table th { background: #F5F7FA; font-weight: 600; color: #303133; }
+        .tag {
+            display: inline-block;
+            padding: 0 8px;
+            height: 24px;
+            line-height: 24px;
+            font-size: 12px;
+            border-radius: 3px;
+        }
+        .tag-success { background: #F0F9EB; color: #67C23A; }
+        .tag-warning { background: #FDF6EC; color: #E6A23C; }
+        .tag-info { background: #F4F4F5; color: #909399; }
+        .link { color: #409EFF; cursor: pointer; text-decoration: none; margin-right: 10px; }
+        code {
+            padding: 2px 6px;
+            background: #F5F7FA;
+            border: 1px solid #EBEEF5;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+            font-size: 13px;
+            color: #C41D7F;
+        }
+    </style>
+</head>
+<body>
+<div class="banner" id="demo-banner">📢 这是一条演示用的顶部公告条，可用「状态批注」一键隐藏它。</div>
+
+<header class="page-header" id="demo-header">
+    <div class="logo">VC</div>
+    <div>
+        <div class="title">Vibe Coding HTML 原型图批注工具</div>
+        <div class="sub">示例页面 · 点击右侧「注释」按钮打开批注侧栏</div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="card" id="sec-intro">
+        <h1>这是一个演示用的商品管理原型</h1>
+        <p>页面上常见的元素——公告条、表单、按钮、表格——都可以被批注。右侧栏已预置 4 条示例批注和 2 条状态批注，点击卡片即可定位到对应元素。</p>
+        <p>点击页面右侧的「注释」把手开关侧栏；本地服务模式下可点「选择元素」为任意元素添加批注；「状态批注」可一键隐藏指定元素，用来模拟页面的不同状态。</p>
+        <p>批注数据存放在 <code>data/text-annotations.json</code> 与 <code>data/status-annotations.json</code> 两个文件里。</p>
+    </div>
+
+    <div class="card" id="sec-form">
+        <h2>新增商品</h2>
+        <div class="form-row"><label>商品名称</label><input type="text" placeholder="请输入商品名称"></div>
+        <div class="form-row"><label>单价（元）</label><input type="text" placeholder="请输入单价"></div>
+        <div class="form-row"><label>分类</label>
+            <select>
+                <option>食品</option>
+                <option>数码</option>
+                <option>服饰</option>
+            </select>
+        </div>
+        <div class="form-row"><label>库存</label><input type="text" placeholder="选填"></div>
+        <div class="form-row">
+            <label></label>
+            <button class="btn btn-primary" id="btn-submit">提交</button>
+            <button class="btn">取消</button>
+        </div>
+    </div>
+
+    <div class="card" id="sec-table">
+        <h2>商品列表</h2>
+        <table>
+            <thead>
+                <tr><th>商品名称</th><th>单价</th><th>库存</th><th>状态</th><th>操作</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>无线蓝牙耳机</td><td>¥199.00</td><td>320</td><td><span class="tag tag-success">在售</span></td><td><a class="link">编辑</a><a class="link">下架</a></td></tr>
+                <tr><td>保温杯 500ml</td><td>¥59.00</td><td>86</td><td><span class="tag tag-success">在售</span></td><td><a class="link">编辑</a><a class="link">下架</a></td></tr>
+                <tr><td>机械键盘</td><td>¥349.00</td><td>0</td><td><span class="tag tag-warning">缺货</span></td><td><a class="link">编辑</a><a class="link">下架</a></td></tr>
+                <tr><td>帆布双肩包</td><td>¥129.00</td><td>45</td><td><span class="tag tag-info">待上架</span></td><td><a class="link">编辑</a><a class="link">上架</a></td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

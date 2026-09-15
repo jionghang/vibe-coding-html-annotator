@@ -1,0 +1,38 @@
+[
+  {
+    "id": "demo001intro",
+    "title": "这是一个演示用的商品管理原型",
+    "content": "<p><strong>这是示例批注 1：</strong>点击卡片可高亮并定位到对应元素；鼠标悬停在页面元素上，会显示与卡片对应的序号标记。</p><p>侧栏支持拖拽调整宽度，且宽度会被永久记住。</p>",
+    "selectors": ["#sec-intro", "div > div > div"],
+    "url": "/example.html",
+    "filename": "example.html",
+    "created": "2026-09-10T09:00:00.000Z"
+  },
+  {
+    "id": "demo002form",
+    "title": "新增商品",
+    "content": "<p><strong>这是示例批注 2：</strong>批注内容支持富文本，例如：</p><ul><li>单价需要校验必须大于 0</li><li>分类下拉建议默认选中「食品」</li><li>库存为选填，建议弱化展示</li></ul>",
+    "selectors": ["#sec-form", "div > div > div"],
+    "url": "/example.html",
+    "filename": "example.html",
+    "created": "2026-09-10T09:05:00.000Z"
+  },
+  {
+    "id": "demo003btn",
+    "title": "提交",
+    "content": "<p><strong>这是示例批注 3：</strong>提交按钮点击后应有 loading 态，成功后刷新列表并提示「保存成功」。</p>",
+    "selectors": ["#btn-submit", "div > div > div > div > button"],
+    "url": "/example.html",
+    "filename": "example.html",
+    "created": "2026-09-10T09:10:00.000Z"
+  },
+  {
+    "id": "demo004table",
+    "title": "商品列表",
+    "content": "<p><strong>这是示例批注 4：</strong>列表建议增加按状态筛选；「下架」操作需要二次确认。</p><p>双击卡片标题可打开大窗查看，大窗中可切换上一条 / 下一条。</p>",
+    "selectors": ["#sec-table", "div > div > div"],
+    "url": "/example.html",
+    "filename": "example.html",
+    "created": "2026-09-10T09:15:00.000Z"
+  }
+]
