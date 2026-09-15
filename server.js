@@ -36,7 +36,7 @@ function writeData(data) {
 function readStatusData() { return JSON.parse(fs.readFileSync(STATUS_FILE, 'utf-8')); }
 function writeStatusData(data) { fs.writeFileSync(STATUS_FILE, JSON.stringify(data, null, 2), 'utf-8'); }
 
-// ---------- 文本注释 API ----------
+// ---------- 文本批注 API ----------
 app.get('/api/text-annotations', (req, res) => {
     const notes = readData();
     res.json(notes);
@@ -91,7 +91,7 @@ app.delete('/api/text-annotations/:id', (req, res) => {
     res.status(204).send();
 });
 
-// ---------- 状态注释 API ----------
+// ---------- 状态批注 API ----------
 app.get('/api/status-annotations', (req, res) => res.json(readStatusData()));
 app.put('/api/status-annotations', (req, res) => {
     if (!Array.isArray(req.body)) return res.status(400).json({ error: '数据格式错误，须为数组' });
