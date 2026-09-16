@@ -1,4 +1,4 @@
-# Vibe Coding HTML 原型图批注工具（note-overlay）
+# HTML 原型图批注工具（note-overlay）
 
 Vibe coding 让 HTML 原型图的产出变得很快，但给原型图做标注并不方便：想在页面某个元素旁写一句说明或修改意见，缺少直观的可视化批注方式；哪怕只是简单的标注，也要回到对话框里向大模型描述位置、让它改代码——沟通成本高，等待时间长，还可能引入意外改动。
 
@@ -8,7 +8,7 @@ Vibe coding 让 HTML 原型图的产出变得很快，但给原型图做标注�
 
 ## 在线演示
 
-[https://jionghang.github.io/vibe-coding-html-annotator/example.html](https://jionghang.github.io/vibe-coding-html-annotator/example.html)
+[https://jionghang.github.io/html-annotator/example.html](https://jionghang.github.io/html-annotator/example.html)
 
 演示站点通过 GitHub Pages 静态部署，为只读模式：可以查看预置的示例批注，不能新增或修改。
 

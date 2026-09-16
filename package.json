@@ -1,7 +1,7 @@
 {
-  "name": "vibe-coding-html-annotator",
+  "name": "html-annotator",
   "version": "1.0.0",
-  "description": "Vibe Coding HTML 原型图批注工具：引入一个脚本即可为任意网页添加右侧批注侧栏",
+  "description": "HTML 原型图批注工具：引入一个脚本即可为任意 HTML 页面添加右侧批注侧栏",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
